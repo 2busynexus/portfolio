@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+:root {
+
+    --purple1: hsl(222, 50%, 10%);
+    --purple2: hsl(222, 50%, 20%);
+    --purple3: hsl(222, 50%, 30%);
+    --purple4: hsl(222, 50%, 40%);
+    --purple5: hsl(222, 50%, 50%);
+
+    --blue: hsl(170, 50%, 30%);
+    --purple: hsl(222, 50%, 35%);
+  }
+
+body {
+    height: 100vh;
+    width: 100wh;
+    background-color: var(--purple3);
+    font-size: 24px;
+    color: white;
+}
+
+main {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.intro {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro h1 {
+    margin: 50px 0;
+}
+
+
+nav {
+    display: flex;
+    position: sticky;
+    top: 5px;
+    left: 0px;
+    z-index: 1;
+}
+
+nav a{
+    text-decoration: none;
+    background-color: var(--purple1);
+    margin: 5px 2px;
+    padding: 5px;
+    color: white;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: var(--purple5);
+    color: var(--purple1);
+    /*transform: translate(-5px);
+    transform: translateX(5px);*/
+    transform: translateY(5px);
+    font-weight: 600;
+}
+
+.content {
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content div {
+    position: relative;
+    border: 1px solid var(--purple5);
+    width: 50%;
+}
+
