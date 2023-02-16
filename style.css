@@ -22,42 +22,76 @@
   }
 
 body {
-    height: 100vh;
-    width: 100wh;
-    background-color: var(--purple3);
-    font-size: 24px;
+    background-color: var(--purple2);
     color: white;
-}
-
-main {
-    display: flex;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-}
-
-.intro {
-    position: relative;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.intro { 
+    display: flex;
+    position: relative;
+    height: 100vh; 
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+    
+.intro div:nth-child(1) {
+    opacity: 0;
 }
 
-.intro h1 {
-    margin: 50px 0;
+.intro div:nth-child(2) {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: fade-in 5s;
 }
 
+@keyframes fade-in-intro {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        font-size: 2em;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        font-size: 75%;
+    }
+}
+
+@keyframes fade-in-nav {
+    100% {
+        opacity: 1;
+    }
+}
 
 nav {
-    display: flex;
+    display: none;
     position: sticky;
-    top: 5px;
-    left: 0px;
-    z-index: 1;
+    top: -1px;
+    opacity: 0;
+    animation: fade-in-nav 2s linear 2s forwards;
 }
 
 nav a{
@@ -73,23 +107,51 @@ nav a{
 nav a:hover {
     background-color: var(--purple5);
     color: var(--purple1);
-    /*transform: translate(-5px);
-    transform: translateX(5px);*/
-    transform: translateY(5px);
     font-weight: 600;
 }
 
+.container {
+    display: none;
+    flex-direction: column;
+}
+
 .content {
-    position: relative;
-    top: 50px;
+    border: 1px solid white;
+    height: 75vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+}
+
+#photo {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 25px;
+}
+
+.title {
+    display: flex;
+}
+
+.information {
+    display: flex;
     align-items: center;
+    
 }
 
-.content div {
-    position: relative;
-    border: 1px solid var(--purple5);
-    width: 50%;
+ion-icon {
+    font-size: 6em;
+    color: yellow;
 }
 
+.information img {
+    width: 50px;
+}
+
+footer {
+    background-color: var(--purple1);
+    color: var(--purple4);
+    text-align: center;
+}
