@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
-
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
 
 * {
     margin: 0;
@@ -44,6 +44,7 @@ h3 {
     display: flex;
     position: relative;
     height: 100vh; 
+    width: 100vw;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -89,9 +90,21 @@ h3 {
 nav {
     display: none;
     position: sticky;
-    top: -1px;
+    top: 10px;
     opacity: 0;
     animation: fade-in-nav 2s linear 2s forwards;
+}
+
+nav.sticky {
+    position: fixed;
+    left: 100px;
+    opacity: 1;
+    transition: 0.2s;
+    animation: nav 2s;
+  }
+
+@keyframes nav {
+
 }
 
 nav a{
@@ -116,7 +129,6 @@ nav a:hover {
 }
 
 .content {
-    border: 1px solid white;
     height: 75vh;
     display: flex;
     flex-direction: column;
@@ -124,11 +136,19 @@ nav a:hover {
     padding: 10%;
 }
 
+.content:nth-child(odd) {
+    background-color: var(--purple5);
+}
+
 #photo {
     width: 50px;
     height: 50px;
     background-color: black;
     border-radius: 25px;
+}
+
+#about {
+    margin-top: 120px;
 }
 
 .title {
@@ -142,12 +162,13 @@ nav a:hover {
 }
 
 ion-icon {
-    font-size: 6em;
+    font-size: 5em;
     color: yellow;
 }
 
-.information img {
-    width: 50px;
+i {
+    font-size: 3.5em;
+    color: yellow;
 }
 
 footer {
