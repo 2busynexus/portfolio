@@ -95,14 +95,6 @@ nav {
     animation: fade-in-nav 2s linear 2s forwards;
 }
 
-nav.sticky {
-    position: fixed;
-    left: 100px;
-    opacity: 1;
-    transition: 0.2s;
-    animation: nav 2s;
-  }
-
 @keyframes nav {
 
 }
@@ -132,8 +124,13 @@ nav a:hover {
     height: 75vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 10%;
+   /* justify-content: center; */
+    padding: 10% 15%;
+}
+
+.content h2 {
+    margin: 1em 0;
+
 }
 
 .content:nth-child(odd) {
@@ -147,18 +144,17 @@ nav a:hover {
     border-radius: 25px;
 }
 
-#about {
-    margin-top: 120px;
-}
-
 .title {
     display: flex;
 }
 
 .information {
     display: flex;
-    align-items: center;
-    
+    justify-content: space-between;
+}
+
+.information .icons {
+    text-align: center;
 }
 
 ion-icon {
@@ -167,7 +163,7 @@ ion-icon {
 }
 
 i {
-    font-size: 3.5em;
+    font-size: 4.06em;
     color: yellow;
 }
 
