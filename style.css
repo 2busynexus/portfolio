@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
 @import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
 
+html{
+    font-size: 20px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,15 +14,11 @@
 }
 
 :root {
-
     --purple1: hsl(222, 50%, 10%);
     --purple2: hsl(222, 50%, 20%);
     --purple3: hsl(222, 50%, 30%);
     --purple4: hsl(222, 50%, 40%);
     --purple5: hsl(222, 50%, 50%);
-
-    --blue: hsl(170, 50%, 30%);
-    --purple: hsl(222, 50%, 35%);
   }
 
 body {
@@ -29,7 +29,7 @@ body {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 3.5em;
 }
 
 h2 {
@@ -40,6 +40,13 @@ h3 {
     font-size: 2em;
 }
 
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1em;
+}
 .intro { 
     display: flex;
     position: relative;
@@ -89,17 +96,24 @@ h3 {
 
 nav {
     display: none;
-    position: sticky;
-    top: 10px;
+    position: fixed;
+    top: 20px;
+    right: 5%;
     opacity: 0;
     animation: fade-in-nav 2s linear 2s forwards;
+    z-index: 10;
 }
 
-@keyframes nav {
-
+nav ul {
+    display: flex;
 }
 
-nav a{
+nav li {
+    list-style: none;
+}
+
+
+a{
     text-decoration: none;
     background-color: var(--purple1);
     margin: 5px 2px;
@@ -109,10 +123,15 @@ nav a{
     border-radius: 5px;
 }
 
-nav a:hover {
+a:hover {
     background-color: var(--purple5);
     color: var(--purple1);
     font-weight: 600;
+}
+
+.socials{
+    position: fixed;
+    top: 50%;
 }
 
 .container {
@@ -121,40 +140,40 @@ nav a:hover {
 }
 
 .content {
-    height: 75vh;
+    
     display: flex;
     flex-direction: column;
    /* justify-content: center; */
     padding: 10% 15%;
 }
 
-.content h2 {
-    margin: 1em 0;
-
-}
-
 .content:nth-child(odd) {
     background-color: var(--purple5);
 }
 
-#photo {
-    width: 50px;
-    height: 50px;
+.photo img{
+    width: 300px;
     background-color: black;
-    border-radius: 25px;
-}
-
-.title {
-    display: flex;
+    border-radius: 150px;
 }
 
 .information {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+#about .information {
+    gap: 100px;
+    margin: 0;
 }
 
 .information .icons {
     text-align: center;
+}
+
+#skills .information {
+    justify-content: space-around;
 }
 
 ion-icon {
@@ -167,8 +186,141 @@ i {
     color: yellow;
 }
 
+#projects .information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    box-shadow: 5px 5px 10px hsl(222, 50%, 20%);
+    text-align: center;
+    gap: 10px;
+    height: 800px;
+}
+
+.project-card li {
+    list-style: none;
+}
+
+#contact .information {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
 footer {
     background-color: var(--purple1);
     color: var(--purple4);
     text-align: center;
 }
+
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .project-card {
+        width: 40%;
+        height: 700px;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #projects .information {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 80%;
+    }
+    #skills .information {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #projects .information {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 80%;
+    }
+
+    #skills .information {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    #about .information {
+        flex-direction: column;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .content {
+       justify-content: center;
+    }
+
+    #skills .information {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    #about .information {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    #projects .information {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 575px) {
+    .content {
+        justify-content: center;
+     }
+
+     #about .information {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    #skills .information {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    #projects .information {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
