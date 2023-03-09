@@ -13,11 +13,11 @@ setTimeout( () => {
     nav.style.display = "flex"
     //makeSticky(nav)
     
-}, 1000) //5
+}, 5000) //5
 
 setTimeout( () => {
     content.style.display = "flex"
-}, 1000) //8
+}, 8000) //8
 
 
 
